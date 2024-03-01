@@ -9,21 +9,20 @@ if (!isset($_SESSION['chamados'])) {
 }
 
 // Estamos trabalhando na montagem do texto
-$titulo = str_replace('#', '-', $_POST['titulo']);
-$categoria = str_replace('#', '-', $_POST['categoria']);
-$descricao = str_replace('#', '-', $_POST['descricao']);
+$nome = str_replace('#', '-', $_POST['nome']);
+$matricula = str_replace('#', '-', $_POST['matricula']);
+$curso = str_replace('#', '-', $_POST['curso']);
 
 // Criar um novo chamado como um array associativo
-$chamado = [
+$alunos = [
     'id' => $_SESSION['id'],
-    'titulo' => $titulo,
-    'categoria' => $categoria,
-    'descricao' => $descricao
+    'nome' => $nome,
+    'matricula' => $matricula,
+    'curso' => $curso
 ];
 
 // Adicionar o novo chamado ao array de chamados na sessão
-$_SESSION['chamados'][] = $chamado;
+$_SESSION['alunos'][] = $alunos;
 
 // Redirecionar para a página abrir_chamado.php
 header('Location: abrir_chamado.php');
-?>

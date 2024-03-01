@@ -1,5 +1,3 @@
 <?php
-
-define('Title','Chamado Real');
-
+define('Title','Cadastro Alunos');
 ?>

@@ -1,15 +1,16 @@
 <?php
 require_once "../../validador_acesso.php";
 
-$chamados = isset($_SESSION['chamados']) ? $_SESSION['chamados'] : [];
+$alunos = isset($_SESSION['alunos']) ? $_SESSION['alunos'] : [];
 
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Consulta de Chamado</title>
+    <title>Consulta de Alunos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         .card-consultar-chamado {
@@ -19,11 +20,12 @@ $chamados = isset($_SESSION['chamados']) ? $_SESSION['chamados'] : [];
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <img src="../../logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            App Help Desk
+            Consulta de Alunos
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -32,22 +34,23 @@ $chamados = isset($_SESSION['chamados']) ? $_SESSION['chamados'] : [];
         </ul>
     </nav>
 
-    <div class="container">    
+    <div class="container">
         <div class="row">
             <div class="card-consultar-chamado">
                 <div class="card">
                     <div class="card-header">
-                        Consulta de chamado
+                    <h5 class="card-title">Lista de Alunos</h5>
                     </div>
-                    
+
                     <div class="card-body">
-                        <?php foreach($chamados as $chamado) { ?>
-                            <?php if (is_array($chamado)) { ?>
+                        <?php foreach ($alunos as $aluno) { ?>
+                            <?php if (is_array($aluno)) { ?>
                                 <div class="card mb-3 bg-light">
                                     <div class="card-body">
-                                        <h5 class="card-title"><?= $chamado['titulo'] ?></h5>
-                                        <h6 class="card-subtitle mb-2 text-muted"><?= $chamado['categoria'] ?></h6>
-                                        <p class="card-text"><?= $chamado['descricao'] ?></p>
+                                        
+                                        <h6 class="card-title">Matrícula: <?= $aluno['matricula'] ?></h6    >
+                                        <h6 class="card-title">Nome: <?= $aluno['nome'] ?></h6>
+                                        <h6 class="card-title">Curso: <?= $aluno['curso'] ?></h6>
                                     </div>
                                 </div>
                             <?php } ?>
@@ -63,4 +66,5 @@ $chamados = isset($_SESSION['chamados']) ? $_SESSION['chamados'] : [];
         </div>
     </div>
 </body>
+
 </html>
