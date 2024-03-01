@@ -3,25 +3,27 @@
 session_start();
 require_once "../../validador_acesso.php";
 
-// O restante do código permanece o mesmo, mas você pode querer otimizar o código CSS e HTML.
+// Criar um array privado para armazenar os chamados
+if (!isset($_SESSION['chamados'])) {
+    $_SESSION['chamados'] = [];
+}
 
-	//estamos trabalhando na montagem do texto
-	$titulo = str_replace('#', '-', $_POST['titulo']);
-	$categoria = str_replace('#', '-', $_POST['categoria']);
-	$descricao = str_replace('#', '-', $_POST['descricao']);
+// Estamos trabalhando na montagem do texto
+$titulo = str_replace('#', '-', $_POST['titulo']);
+$categoria = str_replace('#', '-', $_POST['categoria']);
+$descricao = str_replace('#', '-', $_POST['descricao']);
 
-	//implode('#', $_POST);
+// Criar um novo chamado como um array associativo
+$chamado = [
+    'id' => $_SESSION['id'],
+    'titulo' => $titulo,
+    'categoria' => $categoria,
+    'descricao' => $descricao
+];
 
-	$texto = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
+// Adicionar o novo chamado ao array de chamados na sessão
+$_SESSION['chamados'][] = $chamado;
 
-
-	//abrindo o arquivo
-	$arquivo = fopen('../../arquivo.txt', 'a');
-	//escrevendo o texto
-	fwrite($arquivo, $texto);
-	//fechando o arquivo
-	fclose($arquivo);
-
-	//echo $texto;
-	header('Location: abrir_chamado.php');
+// Redirecionar para a página abrir_chamado.php
+header('Location: abrir_chamado.php');
 ?>
