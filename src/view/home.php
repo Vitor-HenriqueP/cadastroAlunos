@@ -46,15 +46,15 @@ require_once "../../validador_acesso.php";
           <div class="card-body">
             <div class="row">
               <div class="col-6 d-flex justify-content-center">
-                <a href="abrir_chamado.php" style="display: block; text-align: center; color: black;">
-                  <img src="../../formulario_abrir_chamado.png" width="70" height="70">
+                <a href="cadastrar_alunos.php" style="display: block; text-align: center; color: black;">
+                  <img src="../../formulario_cadastra_aluno.png" width="70" height="70">
                   <br/>
                   Cadastrar aluno.
                 </a>
               </div>
               <div class="col-6 d-flex justify-content-center">
-                <a style="display: block; text-align: center; color: black;"href="consultar_chamado.php">
-                  <img src="../../formulario_consultar_chamado.png" width="70" height="70">
+                <a style="display: block; text-align: center; color: black;"href="consultar_alunos.php">
+                  <img src="../../formulario_consultar_alunos.png" width="70" height="70">
                   <br/>
                   Consulta de alunos.
                 </a>

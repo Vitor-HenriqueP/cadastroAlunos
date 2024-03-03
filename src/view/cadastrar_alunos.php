@@ -11,7 +11,7 @@ require_once "../../validador_acesso.php";
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <style>
-    .card-abrir-chamado {
+    .card-cadastra_aluno {
       padding: 30px 0 0 0;
       width: 100%;
       margin: 0 auto;
@@ -36,7 +36,7 @@ require_once "../../validador_acesso.php";
   <div class="container">
     <div class="row">
 
-      <div class="card-abrir-chamado">
+      <div class="card-cadastra_aluno">
         <div class="card">
           <div class="card-header">
             Cadastro do Aluno
@@ -45,7 +45,7 @@ require_once "../../validador_acesso.php";
             <div class="row">
               <div class="col">
 
-                <form method="post" action="registra_chamado.php">
+                <form method="post" action="registra_alunos.php">
                   <div class="form-group">
                     <label>Nome</label>
                     <input name="nome" type="text" class="form-control">
