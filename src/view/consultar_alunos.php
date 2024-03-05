@@ -18,18 +18,83 @@ $alunos = isset($_SESSION['alunos']) ? $_SESSION['alunos'] : [];
             width: 100%;
             margin: 0 auto;
         }
+        .navbar {
+      background-color: #3498db;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar-brand {
+      background-color: white;
+      border-radius: 8px;
+      padding: 6px;
+      transition: box-shadow 0.3s ease-in-out;
+      display: flex;
+    }
+
+    .navbar-brand:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+      background-color: #3498db;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      background-color: #3498db;
+      color: #ffffff;
+      font-size: 24px;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .card-body {
+      background-color: white;  
+ 
+      padding: 20px;
+    }
+    .btn-info {
+      background-color: #3498db;
+      color: #ffffff;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-info:hover {
+      background-color: #2980b9;
+    }
+
+    .btn-sair {
+      background-color: #f1c40f; /* Cor amarela para o botão de sair */
+      color: #ffffff;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-sair:hover {
+      background-color: #d4ac0d;}
+
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-light ">
         <a class="navbar-brand" href="#">
             <img src="../../logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
             Consulta de Alunos
         </a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../../logoff.php">SAIR</a>
+            <a class="nav-link" href="../../logoff.php">
+          <button class="btn btn-sair">SAIR</button>
+        </a>
             </li>
         </ul>
     </nav>
