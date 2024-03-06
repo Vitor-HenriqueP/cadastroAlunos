@@ -24,6 +24,5 @@ $alunos = [
 // Adicionar o novo chamado ao array de alunos na sessão
 $_SESSION['alunos'][] = $alunos;
 
-
 // Redirecionar para a página cadastrar_alunos.php
 header('Location: cadastrar_alunos.php');
