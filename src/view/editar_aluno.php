@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button type="submit" class="btn btn-primary">Salvar</button>
 
-            <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
+            <a style="margin-top: 15px;" class="btn btn-lg btn-warning btn-block" href="home.php" >Voltar</a>
 
         </form>
     </div>
