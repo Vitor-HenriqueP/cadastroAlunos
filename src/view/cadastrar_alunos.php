@@ -1,5 +1,45 @@
 <?php
 require_once "../../validador_acesso.php";
+
+class Aluno
+{
+  private $nome;
+  private $matricula;
+  private $curso;
+
+  public function __construct($nome, $matricula, $curso)
+  {
+    $this->nome = $nome;
+    $this->matricula = $matricula;
+    $this->curso = $curso;
+  }
+
+  public function getNome()
+  {
+    return $this->nome;
+  }
+
+  public function getMatricula()
+  {
+    return $this->matricula;
+  }
+
+  public function getCurso()
+  {
+    return $this->curso;
+  }
+}
+
+class CadastroAlunos
+{
+  private $alunos = [];
+
+  public function cadastrarAluno(Aluno $aluno)
+  {
+    $this->alunos[] = $aluno;
+  }
+}
+
 ?>
 
 <html>
@@ -57,8 +97,8 @@ require_once "../../validador_acesso.php";
     }
 
     .card-body {
-      background-color: white;  
- 
+      background-color: white;
+
       padding: 20px;
     }
 
@@ -66,7 +106,7 @@ require_once "../../validador_acesso.php";
     .form-group {
       position: relative;
       margin-bottom: 20px;
-      
+
     }
 
     .form-control {
@@ -75,7 +115,7 @@ require_once "../../validador_acesso.php";
       border: 3px solid #ddd;
       border-radius: 5px;
       transition: border-color 0.3s ease-in-out;
-      
+
     }
 
     .form-control:focus {
@@ -93,7 +133,8 @@ require_once "../../validador_acesso.php";
     }
 
     .btn-sair {
-      background-color: #f1c40f; /* Cor amarela para o botão de sair */
+      background-color: #f1c40f;
+      /* Cor amarela para o botão de sair */
       color: #ffffff;
       transition: background-color 0.3s ease-in-out;
     }
@@ -101,7 +142,6 @@ require_once "../../validador_acesso.php";
     .btn-sair:hover {
       background-color: #d4ac0d;
     }
-
   </style>
 </head>
 
@@ -114,9 +154,10 @@ require_once "../../validador_acesso.php";
     </a>
     <ul class="navbar-nav">
       <li class="nav-item">
-      <a class="nav-link" href="../../logoff.php">
+        <a class="nav-link" href="../../logoff.php">
           <button class="btn btn-sair">SAIR</button>
-        </a>     </li>
+        </a>
+      </li>
     </ul>
   </nav>
 
@@ -148,7 +189,7 @@ require_once "../../validador_acesso.php";
                       <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
                     </div>
                     <div class="col-6">
-                      <button class="btn btn-lg btn-info btn-block" type="submit">Abrir</button>
+                      <button class="btn btn-lg btn-info btn-block" type="submit">Cadastrar</button>
                     </div>
                   </div>
                 </form>
