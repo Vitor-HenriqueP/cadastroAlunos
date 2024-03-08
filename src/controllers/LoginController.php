@@ -5,7 +5,7 @@ require_once "../cadastroAlunos/src/models/User.php";
 class LoginController
 {
     private $users;
-
+    //Função que define quem pode acessar, cadastrar e consultar os alunos.
     public function __construct()
     {
         $this->users = [
@@ -14,7 +14,7 @@ class LoginController
             new User(3, 'marsio@teste.com.br', '1234', 2)
         ];
     }
-
+    //Autenticação do Login, verificando a senha e e-mail.
     public function autenticar($email, $password)
     {
         $email = trim($email);

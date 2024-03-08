@@ -1,5 +1,5 @@
 <?php
-// home.php
+//Codigo home para a visualização da página inicial
 
 require_once "../../validador_acesso.php";
 ?>
@@ -92,7 +92,7 @@ require_once "../../validador_acesso.php";
     }
 
     .btn-sair {
-      background-color: #f1c40f; /* Cor amarela para o botão de sair */
+      background-color: #f1c40f; 
       color: #ffffff;
       transition: background-color 0.3s ease-in-out;
     }
