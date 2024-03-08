@@ -111,14 +111,22 @@ $alunos = isset($_SESSION['alunos']) ? $_SESSION['alunos'] : [];
           </div>
 
           <div class="card-body">
-            <?php foreach ($alunos as $aluno) { ?>
+            <?php foreach ($alunos as $alunoKey => $aluno) { ?>
               <?php if (is_array($aluno)) { ?>
-                
+
                 <div class="card mb-3 bg-light">
                   <div class="card-body">
                     <h6 class="card-title">Nome: <?= $aluno['nome'] ?></h6>
                     <h6 class="card-title">Matrícula: <?= $aluno['matricula'] ?></h6>
                     <h6 class="card-title">Curso: <?= $aluno['curso'] ?></h6>
+                    <div class="row">
+                      <div class="col">
+                        <a href="editar_aluno.php?id=<?= $alunoKey ?>" class="btn btn-sm btn-info">Editar</a>
+                      </div>
+                      <div class="col">
+                        <a href="excluir_aluno.php?id=<?= $alunoKey ?>" class="btn btn-sm btn-danger">Excluir</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               <?php } ?>
