@@ -43,7 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="curso">Curso:</label>
                 <input type="text" class="form-control" id="curso" name="curso" value="<?= $aluno['curso'] ?>" required>
             </div>
+
             <button type="submit" class="btn btn-primary">Salvar</button>
+
+            <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
+
         </form>
     </div>
 </body>
