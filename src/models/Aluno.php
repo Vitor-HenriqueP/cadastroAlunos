@@ -9,6 +9,5 @@ class Aluno {
         $this->curso = $curso;
         $this->matricula = $matricula;
     }
-
 }
-    ?>
+?>
