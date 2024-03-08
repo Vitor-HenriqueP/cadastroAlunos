@@ -2,6 +2,7 @@
 session_start();
 
 $alunos = isset($_SESSION['alunos']) ? $_SESSION['alunos'] : [];
+
 ?>
 
 <!DOCTYPE html>
@@ -112,6 +113,7 @@ $alunos = isset($_SESSION['alunos']) ? $_SESSION['alunos'] : [];
           <div class="card-body">
             <?php foreach ($alunos as $aluno) { ?>
               <?php if (is_array($aluno)) { ?>
+                
                 <div class="card mb-3 bg-light">
                   <div class="card-body">
                     <h6 class="card-title">Nome: <?= $aluno['nome'] ?></h6>
