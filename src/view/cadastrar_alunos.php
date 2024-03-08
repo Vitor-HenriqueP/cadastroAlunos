@@ -1,35 +1,22 @@
 <?php
 require_once "../../validador_acesso.php";
+
+
+
 require_once "../models/Aluno.php";
+
 class CadastroAlunos
 {
+  private $alunos = [];
+
   public function cadastrarAluno($nome, $curso, $matricula)
   {
     $aluno = new Aluno($nome, $curso, $matricula);
-    $this->adicionarAlunoNaSessao($aluno);
-  }
-
-  public function adicionarAlunoNaSessao($aluno)
-  {
-    session_start();
-    if (!isset($_SESSION['alunos'])) {
-      $_SESSION['alunos'] = [];
-    }
-    $_SESSION['alunos'][] = $aluno;
-  }
-
-  public function getAlunos()
-  {
-    session_start();
-    return isset($_SESSION['alunos']) ? $_SESSION['alunos'] : [];
-  }
-
-  public function limparAlunos()
-  {
-    session_start();
-    $_SESSION['alunos'] = [];
+    $this->alunos[] = $aluno;
   }
 }
+
+
 
 ?>
 

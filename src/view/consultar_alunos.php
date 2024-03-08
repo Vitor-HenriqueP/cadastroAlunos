@@ -1,8 +1,8 @@
 <?php
+session_start();
 
 $alunos = isset($_SESSION['alunos']) ? $_SESSION['alunos'] : [];
 ?>
-
 
 <!DOCTYPE html>
 <html>
